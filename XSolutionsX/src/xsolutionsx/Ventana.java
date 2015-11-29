@@ -8,6 +8,11 @@ package xsolutionsx;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -24,7 +29,7 @@ public class Ventana extends JFrame{
     protected MenuUno menuno;
     private BarraBaja bar;
     
-    public Ventana(){
+    public Ventana() throws IOException{
         
         dim = super.getToolkit().getScreenSize();
         width = dim.getWidth();
@@ -35,6 +40,10 @@ public class Ventana extends JFrame{
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null);
         setTitle("X-Solutyons");
+        
+        Image icon = Toolkit.getDefaultToolkit().getImage(getClass().getResource("showimage.png"));
+        
+        setIconImage(icon);
         
         add(menuno = new MenuUno(this.getWidth(), this.getHeight() / 2));
         
@@ -64,7 +73,7 @@ public class Ventana extends JFrame{
         
         private final JLabel des;
         
-        public BarraBaja(int x, int y, int width, int height){
+        public BarraBaja(int x, int y, int width, int height) throws IOException{
             
             setVisible(true);
             setLayout(null);
@@ -72,12 +81,16 @@ public class Ventana extends JFrame{
             setLocation(x, y);
             setSize(width, height);
             
+            //BufferedImage pic = ImageIO.read(this.getClass().getResource("imageslap.jpeg"));
+            
+           // setBackground(pic);
+            
             des = new JLabel();
             des.setVisible(true);
             des.setLayout(null);
             des.setLocation(100, 2);
             des.setSize(width, 200);
-            des.setFont(new Font("Verdana", Font.PLAIN, 20));
+            des.setFont(new Font("Verdana", Font.PLAIN, 30));
             des.setForeground(Color.WHITE);
             des.setText("La mejor Graficadora de este mundo");
             

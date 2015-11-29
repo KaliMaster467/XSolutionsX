@@ -7,6 +7,10 @@ package xsolutionsx;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -31,7 +35,7 @@ public class MenuUno extends JPanel {
     private JButton iniciar;
     private JButton registrarse;
     
-    public MenuUno(int width, int height){
+    public MenuUno(int width, int height) throws IOException{
         
         fuente = new Font("Verdana", Font.PLAIN, 15);
         
@@ -101,7 +105,6 @@ public class MenuUno extends JPanel {
         iniciar.addActionListener(cont);
         iniciar.setLocation(100, 280);
         iniciar.setSize(100, 30);
-        iniciar.setBackground(Color.GREEN);
         
         add(iniciar);
         
@@ -116,6 +119,18 @@ public class MenuUno extends JPanel {
         registrarse.setSize(100, 30);
         
         add(registrarse);
+        
+        BufferedImage wPic = ImageIO.read(this.getClass().getResource("showimage.png"));
+        
+        JLabel wIcon = new JLabel(new ImageIcon(wPic));
+        
+        wIcon.setLocation(900, 120);
+        wIcon.setSize(wPic.getWidth(), wPic.getHeight());
+        wIcon.setVisible(true);
+        wIcon.setLayout(null);
+        wIcon.setToolTipText("La mejor graficadora papu");
+        
+        add(wIcon);
   
     }
     
