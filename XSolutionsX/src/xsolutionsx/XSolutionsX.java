@@ -5,6 +5,8 @@
  */
 package xsolutionsx;
 
+import java.io.IOException;
+
 /**
  *
  * @author AlbertoReyes
@@ -14,10 +16,10 @@ public class XSolutionsX {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         // TODO code application logic here
         
-        Ventana vent = new Ventana();
+        Manejador man = new Manejador();
         
     }
     

@@ -39,6 +39,8 @@ public class MenuUno extends JPanel {
         
         fuente = new Font("Verdana", Font.PLAIN, 15);
         
+        cont = new Controladora();
+        
         this.width = width;
         this.height = height;
         
@@ -67,7 +69,7 @@ public class MenuUno extends JPanel {
         usuario.setVisible(true);
         usuario.setLayout(null);
         usuario.setLocation(100, this.getHeight() /3 );
-        usuario.setSize(200, 30);
+        usuario.setSize(200, 25);
         usuario.setText("Usuario: ");
         usuario.setFont(fuente);
         usuario.setForeground(Color.BLACK);
@@ -103,12 +105,12 @@ public class MenuUno extends JPanel {
         iniciar.setVisible(true);
         iniciar.setLayout(null);
         iniciar.addActionListener(cont);
+        iniciar.setText("Iniciar");
         iniciar.setLocation(100, 280);
         iniciar.setSize(100, 30);
         
         add(iniciar);
         
-        //dg
         //Crea el boton de registro
         
         registrarse = new JButton("Registro");

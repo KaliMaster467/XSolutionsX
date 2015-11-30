@@ -5,6 +5,8 @@
  */
 package xsolutionsx;
 
+import java.awt.Color;
+import java.awt.Graphics;
 import javax.swing.JPanel;
 
 /**
@@ -13,9 +15,29 @@ import javax.swing.JPanel;
  */
 public class Plano extends JPanel{
     
-    public Plano(){
+    public Plano(int width, int height){
         
+        setBackground(Color.WHITE);
+        setVisible(true);
+        setLayout(null);
+        setSize(width, height);
+        setLocation(0, 0);
         
+    }
+    public void paintX(Graphics g){
+        
+        super.paintComponent(g);
+        
+        g.setColor(Color.red);
+        g.fillRect(this.getWidth() / 2, 0, 3, this.getHeight());
+        
+    }
+    public void paintY(Graphics g){
+        
+        super.paintComponent(g);
+        
+        g.setColor(Color.red);
+        g.fillRect(0, this.getHeight() / 2, this.getWidth(), 3);
         
     }
     

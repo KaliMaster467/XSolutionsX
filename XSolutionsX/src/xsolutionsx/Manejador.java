@@ -5,26 +5,23 @@
  */
 package xsolutionsx;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.ArrayList;
-import javax.swing.JOptionPane;
 
 /**
  *
  * @author AlbertoReyes
  */
-public class Controladora implements ActionListener{
+class Manejador {
     
-    /*private ArrayList <Usuario> user;
+    private ArrayList <Usuario> user;
     private Ventana vent;
     public static Plano plano;
     private MenuUno menuno;
     private BarraBaja bar;
     
     
-    public Controladora() throws IOException{
+    public Manejador() throws IOException{
         
         vent = new Ventana();
         
@@ -35,19 +32,5 @@ public class Controladora implements ActionListener{
         bar = new BarraBaja(0, vent.getHeight() / 2, vent.getWidth(), vent.getHeight());
         
         vent.getContentPane().add(bar);
-        
-    }*/
-    
-    
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        
-        if(e.getActionCommand().equals("Iniciar")){
-            
-            JOptionPane.showMessageDialog(null,"hola");
-               
-        }
-        
     }
-    
 }
