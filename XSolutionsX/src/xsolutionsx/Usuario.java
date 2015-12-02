@@ -5,24 +5,14 @@
  */
 package xsolutionsx;
 
+import java.io.Serializable;
+
 /**
  *
  * @author AlbertoReyes
  */
-public class Usuario {
-    
-    public Usuario(String nombre, String clave){
-        
-        this.nombre = nombre;
-        this.clave = clave;
-        
-    }
-    public Usuario(String clave){
-        
-        this.clave = clave;
-        nombre = "";
-        
-    }
+public class Usuario implements Serializable{
+
     public void setClave(String clave){
         
         this.clave = clave;
@@ -38,7 +28,20 @@ public class Usuario {
         return clave;
         
     }
-    private final String nombre;
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getGrupo() {
+        return grupo;
+    }
+
+    public void setGrupo(String grupo) {
+        this.grupo = grupo;
+    }
+    private String nombre;
     private String clave;
+    private String grupo;
     
 }

@@ -17,6 +17,7 @@ import javax.swing.JOptionPane;
  */
 public class Controladora implements ActionListener{
     
+    Usuario user;
     /*private ArrayList <Usuario> user;
     private Ventana vent;
     public static Plano plano;
@@ -49,8 +50,17 @@ public class Controladora implements ActionListener{
             case "Registro":
                 Registro reg = new Registro();
                 break;
-        }
-        
+            case "Registrar":
+                if(Registro.contraseña.getText().equals(Registro.compCB.getText())) {
+                    user = new Usuario();
+                    user.setClave(Registro.contraseña.getText());
+                    user.setGrupo(Registro.grup.getText());
+                    user.setNombre(Registro.nombre.getText());
+                    Manejador.pp.add(user);
+                }
+                
+        }    
     }
-    
+        
 }
+    

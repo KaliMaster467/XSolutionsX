@@ -10,9 +10,9 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 
-public class Registro extends JFrame implements ActionListener {
-    JTextField nombre,grup;
-    JPasswordField contraseña, compCB;
+public class Registro extends JFrame{
+    static JTextField nombre,grup;
+    static JPasswordField contraseña, compCB;
     JLabel nombresito,contra, compCont, grupo;
     JButton Registrar;
     Controladora cont = new Controladora();
@@ -69,13 +69,5 @@ public class Registro extends JFrame implements ActionListener {
         setVisible(true);
    }
     
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        switch (e.getActionCommand()) {
-            case "Registrar":
-                
-        }
-    }
     
 }

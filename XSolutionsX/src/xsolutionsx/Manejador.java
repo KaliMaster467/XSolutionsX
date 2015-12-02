@@ -13,8 +13,8 @@ import java.util.ArrayList;
  * @author AlbertoReyes
  */
 class Manejador {
-    
-    private ArrayList <Usuario> user;
+   
+    public static ArrayList <Usuario> pp= new ArrayList <> ();
     private Ventana vent;
     public static Plano plano;
     private MenuUno menuno;
@@ -22,6 +22,8 @@ class Manejador {
     
     
     public Manejador() throws IOException{
+        
+        
         
         vent = new Ventana();
         
