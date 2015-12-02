@@ -7,6 +7,8 @@ package xsolutionsx;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import javax.imageio.ImageIO;
@@ -21,7 +23,7 @@ import javax.swing.JTextField;
  *
  * @author Bugatti
  */
-public class MenuUno extends JPanel {
+public class MenuUno extends JPanel{
     
     private JTextField user;
     private JPasswordField pass;
@@ -122,6 +124,7 @@ public class MenuUno extends JPanel {
         
         add(registrarse);
         
+         
         BufferedImage wPic = ImageIO.read(this.getClass().getResource("showimage.png"));
         
         JLabel wIcon = new JLabel(new ImageIcon(wPic));
@@ -161,5 +164,6 @@ public class MenuUno extends JPanel {
         return contraseña.getText();
         
     }
+
     
 }

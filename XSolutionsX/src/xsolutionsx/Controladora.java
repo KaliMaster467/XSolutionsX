@@ -42,10 +42,13 @@ public class Controladora implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         
-        if(e.getActionCommand().equals("Iniciar")){
-            
-            JOptionPane.showMessageDialog(null,"hola");
-               
+        switch (e.getActionCommand()) {
+            case "Iniciar":
+                JOptionPane.showMessageDialog(null,"hola");
+                break;
+            case "Registro":
+                Registro reg = new Registro();
+                break;
         }
         
     }
