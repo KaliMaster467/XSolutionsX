@@ -14,16 +14,16 @@ import java.util.ArrayList;
  */
 class Manejador {
    
-    public static ArrayList <Usuario> pp= new ArrayList <> ();
-    private Ventana vent;
+    public static ArrayList<Usuario> pp= new ArrayList <> ();
+    public Ventana vent;
     public static Plano plano;
     private MenuUno menuno;
     private BarraBaja bar;
+    private Datos dats = new Datos();
     
-    
-    public Manejador() throws IOException{
+    public void Manejadors() throws IOException{
         
-        
+        pp = dats.datosNuevos();
         
         vent = new Ventana();
         
@@ -34,5 +34,14 @@ class Manejador {
         bar = new BarraBaja(0, vent.getHeight() / 2, vent.getWidth(), vent.getHeight());
         
         vent.getContentPane().add(bar);
+    }
+
+    public final Ventana getVent() {
+        return vent;
+    }
+    
+    
+    public ArrayList<Usuario> getPp() {
+        return pp;
     }
 }

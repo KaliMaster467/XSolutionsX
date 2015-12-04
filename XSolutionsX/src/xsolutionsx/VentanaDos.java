@@ -27,7 +27,7 @@ public class VentanaDos extends Ventana{
         setLayout(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setTitle("X-Solutyons");
-        this.setResizable(true);
+        this.setResizable(false);
         
         Image icon = Toolkit.getDefaultToolkit().getImage(getClass().getResource("showimage.png"));
         

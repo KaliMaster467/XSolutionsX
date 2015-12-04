@@ -25,8 +25,8 @@ import javax.swing.JTextField;
  */
 public class MenuUno extends JPanel{
     
-    private JTextField user;
-    private JPasswordField pass;
+    public static JTextField userReturned;
+    public static JPasswordField passReturned;
     private JLabel usuario;
     private JLabel contraseña;
     private JLabel imag;
@@ -36,7 +36,7 @@ public class MenuUno extends JPanel{
     private Controladora cont;
     private JButton iniciar;
     private JButton registrarse;
-    
+        
     public MenuUno(int width, int height) throws IOException{
         
         fuente = new Font("Verdana", Font.PLAIN, 15);
@@ -56,14 +56,14 @@ public class MenuUno extends JPanel{
         
         //Crea la zona de texto para el usuario
         
-        user = new JTextField();
-        user.setVisible(true);
-        user.setLayout(null);
-        user.setSize(200, 30);
-        user.setLocation(200, this.getHeight() /3 );
-        user.setFont(fuente);
+        userReturned = new JTextField();
+        userReturned.setVisible(true);
+        userReturned.setLayout(null);
+        userReturned.setSize(200, 30);
+        userReturned.setLocation(200, this.getHeight() /3 );
+        userReturned.setFont(fuente);
         
-        add(user);
+        add(userReturned);
         
         //crea la etiqueta
         
@@ -80,13 +80,13 @@ public class MenuUno extends JPanel{
         
         //Crea el area de texto para la contraseña
         
-        pass = new JPasswordField();
-        pass.setVisible(true);
-        pass.setLayout(null);
-        pass.setSize(200, 30);
-        pass.setLocation(200, 200);
+        passReturned = new JPasswordField();
+        passReturned.setVisible(true);
+        passReturned.setLayout(null);
+        passReturned.setSize(200, 30);
+        passReturned.setLocation(200, 200);
         
-        add(pass);
+        add(passReturned);
         
         //Crea la etiqueta para la contraseña
         
@@ -156,7 +156,7 @@ public class MenuUno extends JPanel{
     }
     public String getUserText(){
         
-        return user.getText();
+        return userReturned.getText();
         
     }
     public String getUserPass(){
@@ -164,6 +164,7 @@ public class MenuUno extends JPanel{
         return contraseña.getText();
         
     }
+
 
     
 }

@@ -7,6 +7,8 @@ package xsolutionsx;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.io.IOException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -15,51 +17,45 @@ import javax.swing.JOptionPane;
  *
  * @author AlbertoReyes
  */
-public class Controladora implements ActionListener{
-    
+public class Controladora implements ActionListener, ItemListener{
+    int noCuenta = 0;
     Usuario user;
-    /*private ArrayList <Usuario> user;
-    private Ventana vent;
-    public static Plano plano;
-    private MenuUno menuno;
-    private BarraBaja bar;
-    
-    
-    public Controladora() throws IOException{
-        
-        vent = new Ventana();
-        
-        menuno = new MenuUno(vent.getWidth(), vent.getHeight() / 2);
-        
-        vent.getContentPane().add(menuno);
-        
-        bar = new BarraBaja(0, vent.getHeight() / 2, vent.getWidth(), vent.getHeight());
-        
-        vent.getContentPane().add(bar);
-        
-    }*/
-    
     
     @Override
     public void actionPerformed(ActionEvent e) {
         
         switch (e.getActionCommand()) {
             case "Iniciar":
-                JOptionPane.showMessageDialog(null,"hola");
+                boolean enc = false;
+                for(int i = 0;i<Manejador.pp.size();i++) {
+                    if(Manejador.pp.get(i).getNombre().equals(MenuUno.userReturned.getText())) {
+                        if(Manejador.pp.get(i).getClave().equals(MenuUno.passReturned.getText())) {
+                            enc = true;
+                            JOptionPane.showMessageDialog(null, "Bienvenido "+Manejador.pp.get(i).getNombre());
+                            //SE INICIA LA GRAFICADORA
+                            Graficadora graf = new Graficadora();
+                            noCuenta=i;
+                            
+                            
+                        }
+                    }
+                }
+                if(enc == false) {
+                    JOptionPane.showMessageDialog(null, "Usuario o contraseña invalidos");
+                }
                 break;
             case "Registro":
                 Registro reg = new Registro();
-                break;
-            case "Registrar":
-                if(Registro.contraseña.getText().equals(Registro.compCB.getText())) {
-                    user = new Usuario();
-                    user.setClave(Registro.contraseña.getText());
-                    user.setGrupo(Registro.grup.getText());
-                    user.setNombre(Registro.nombre.getText());
-                    Manejador.pp.add(user);
-                }
-                
+                break;        
         }    
+    }
+    public int getNoCuenta() {
+        return noCuenta;
+    }
+
+    @Override
+    public void itemStateChanged(ItemEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
         
 }

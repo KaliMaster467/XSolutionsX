@@ -28,7 +28,6 @@ public class Usuario implements Serializable{
         return clave;
         
     }
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }

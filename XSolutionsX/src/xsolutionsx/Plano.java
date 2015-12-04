@@ -15,14 +15,13 @@ import javax.swing.JPanel;
  */
 public class Plano extends JPanel{
     
-    public Plano(int width, int height){
+    public Plano(int ancho, int alto){
         
         setBackground(Color.WHITE);
         setVisible(true);
         setLayout(null);
-        setSize(width, height);
+        setSize(ancho, alto);
         setLocation(0, 0);
-        
     }
     public void paintX(Graphics g){
         

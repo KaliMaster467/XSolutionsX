@@ -20,6 +20,7 @@ public class XSolutionsX {
         // TODO code application logic here
         
         Manejador man = new Manejador();
+        man.Manejadors();
         
     }
     
